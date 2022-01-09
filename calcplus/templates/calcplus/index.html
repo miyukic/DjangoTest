@@ -6,6 +6,11 @@
 </head>
 <body>
     <h1>{{ title }}</h1>
-    <p>Write code here!</p>
+    <p>{{ answer }}</p>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        {{ forms }}
+        <input type='submit' value="click">
+    </form>
 </body>
 </html>
